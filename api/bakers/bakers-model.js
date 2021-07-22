@@ -5,7 +5,7 @@ function getAll() {
 }
 
 function getById(id) {
-  return db("bakers").where("id", id);
+  return db("bakers").where("id", id).first();
 }
 
 async function insert(baker) {
