@@ -13,7 +13,13 @@ async function insert(baker) {
   return getById(id);
 }
 
-async function remove(id) {
-  const removed = await getById(id);
-  db("bakers").where("id", id).delete();
+function remove(id) {
+  return db("bakers").where("id", id).delete();
 }
+
+module.exports = {
+  getAll,
+  getById,
+  insert,
+  remove,
+};
